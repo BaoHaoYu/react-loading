@@ -1,0 +1,17 @@
+.loading-enter {
+    opacity: 0.01;
+}
+
+.loading-enter.loading-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+.loading-leave {
+    opacity: 1;
+}
+
+.loading-leave.loading-leave-active {
+    opacity: 0.01;
+    transition: opacity 200ms ease-in-out;
+}
