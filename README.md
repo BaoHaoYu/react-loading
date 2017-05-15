@@ -1,2 +1,1 @@
-# react-loading
-page loading
+# react-loading-demo
