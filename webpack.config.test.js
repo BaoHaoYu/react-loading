@@ -8,7 +8,7 @@ module.exports = {
         filename: 'bundle.js',
 
         // 输出目录
-        path: path.resolve(__dirname, '__build__'),
+        path: path.resolve(__dirname, 'build'),
     },
 
     watch: !0,
