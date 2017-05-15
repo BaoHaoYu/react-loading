@@ -1,14 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
-    entry: './__test__/index.js',
+    entry: './test/index.js',
 
     output: {
         // 输出文件名
-        filename: '[name].js',
+        filename: 'bundle.js',
 
         // 输出目录
-        path: path.resolve(__dirname, '__test__/dist'),
+        path: path.resolve(__dirname, '__build__'),
     },
 
     watch: !0,
@@ -37,5 +37,16 @@ module.exports = {
             },
         ],
     },
-
+    plugins: [
+        // mini
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
+        // env
+        // new webpack.DefinePlugin({
+        //     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+        // }),
+    ]
 };
