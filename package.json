@@ -1,6 +1,6 @@
 {
-  "name": "react-loading",
-  "version": "1.0.0",
+  "name": "react-bhy-loading",
+  "version": "0.0.2",
   "scripts": {
     "webpack index": "webpack --config webpack.config.js",
     "webpack test": "webpack --config webpack.config.test.js",
@@ -16,6 +16,7 @@
     "css-loader": "^0.28.1",
     "postcss-loader": "^2.0.5",
     "precss": "^1.4.0",
+    "react": "^15.5.4",
     "style-loader": "^0.17.0",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.5.1",
@@ -26,5 +27,26 @@
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.5.4"
-  }
+  },
+  "description": "page loading",
+  "main": "dist/react-loading.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaoHaoYu/react-loading.git"
+  },
+  "keywords": [
+    "react-loading",
+    "react",
+    "page loading",
+    "bhy"
+  ],
+  "author": "baohaoyu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaoHaoYu/react-loading/issues"
+  },
+  "homepage": "https://github.com/BaoHaoYu/react-loading#readme"
 }
