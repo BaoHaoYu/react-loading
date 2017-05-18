@@ -1,2 +1,2 @@
 # react-loading
-page loading
+page loading demo: https://baohaoyu.github.io/react-loading/index.html
