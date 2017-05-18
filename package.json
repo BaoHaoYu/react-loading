@@ -20,13 +20,13 @@
     "style-loader": "^0.17.0",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.5.1",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "immutable": "^3.8.1",
+    "react-dom": "^15.5.4"
   },
   "dependencies": {
-    "immutable": "^3.8.1",
     "react": "^15.5.4",
-    "react-addons-css-transition-group": "^15.5.2",
-    "react-dom": "^15.5.4"
+    "react-addons-css-transition-group": "^15.5.2"
   },
   "description": "page loading",
   "main": "dist/react-loading.js",
