@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import Loading from '../dist/react-loading'
+import BhyLoading from '../dist/index'
 import {fromJS} from 'immutable'
 import {from} from 'immutable/contrib/cursor'
 import './index.styl'
+
 class Main extends React.Component {
     state = {
         $$s: fromJS({
@@ -28,7 +29,6 @@ class Main extends React.Component {
         const $$data = from(this.state.$$s, ['data'], $$newS => this.setIn($$newS));
         const $$fullWindow = $$data.getIn(['fullWindow']);
         const $$box = $$data.getIn(['box']);
-
         return (
           <div>
               <div>
@@ -42,7 +42,7 @@ class Main extends React.Component {
               </div>
               <div>
                   <h3>fullWindow</h3>
-                  <Loading
+                  <BhyLoading
                     open={ $$fullWindow.get('open') }
                     opacity={ $$fullWindow.get('opacity') }
                     dotSize={ $$data.get('dotSize') }
@@ -59,7 +59,7 @@ class Main extends React.Component {
                   <h3>box</h3>
 
                   <div className="box-content">
-                      <Loading
+                      <BhyLoading
                         open={ $$box.get('open') }
                         opacity={ $$box.get('opacity') }
                         dotSize={ $$data.get('dotSize') }
