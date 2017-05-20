@@ -25,7 +25,6 @@ class Loading extends React.Component {
             transitionLeaveTimeout={ 200 }>
               {p.open && (
                 <div
-                  ref={ 'main' }
                   className={ rootClass }
                   style={ {...p.style, backgroundColor: p.backgroundColor} }>
                     <div className={ s['boxLoading-contain'] }>

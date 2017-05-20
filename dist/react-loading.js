@@ -633,7 +633,6 @@ var Loading = function (_React$Component) {
                 p.open && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     {
-                        ref: 'main',
                         className: rootClass,
                         style: _extends({}, p.style, { backgroundColor: p.backgroundColor }) },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
