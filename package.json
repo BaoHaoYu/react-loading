@@ -1,6 +1,6 @@
 {
   "name": "react-bhy-loading",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "webpack index": "webpack --config webpack.config.js",
     "webpack test": "webpack --config webpack.config.test.js",
@@ -29,7 +29,7 @@
     "react-addons-css-transition-group": "^15.5.2"
   },
   "description": "page loading",
-  "main": "dist/index.js",
+  "main": "dist/react-loading.js",
   "directories": {
     "test": "test"
   },
