@@ -7,7 +7,7 @@
 		var a = typeof exports === 'object' ? factory(require("react"), require("react-addons-css-transition-group")) : factory(root["react"], root["react-addons-css-transition-group"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -196,7 +196,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(9);
+	fixUrls = __webpack_require__(10);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -473,34 +473,31 @@ function updateLink(linkElement, options, obj) {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+"use strict";
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// load the styles
-var content = __webpack_require__(7);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
+var CssCombine = function CssCombine(_ref) {
+    var style = _ref.style;
 
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./animate.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./animate.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+    _classCallCheck(this, CssCombine);
+
+    this.style = style;
+
+    this.combine = function () {
+        var root = arguments[0];
+        var cssList = [style[root]];
+
+        for (var i = 1; i < arguments.length; i++) {
+            var v = arguments[i];
+            if (typeof v != 'boolean') cssList.push(style[root + v]);
+        }
+        return cssList.join(' ');
+    };
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (CssCombine);
 
 /***/ }),
 /* 3 */
@@ -523,8 +520,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/postcss-loader/lib/index.js??ref--1-2!../node_modules/stylus-loader/index.js!./style.styl", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--1-1!../node_modules/postcss-loader/lib/index.js??ref--1-2!../node_modules/stylus-loader/index.js!./style.styl");
+		module.hot.accept("!!../node_modules/.css-loader@0.28.1@css-loader/index.js!./animate.css", function() {
+			var newContent = require("!!../node_modules/.css-loader@0.28.1@css-loader/index.js!./animate.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -535,9 +532,34 @@ if(false) {
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(9);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/.css-loader@0.28.1@css-loader/index.js??ref--1-1!../node_modules/.postcss-loader@2.0.5@postcss-loader/lib/index.js??ref--1-2!../node_modules/.stylus-loader@3.0.1@stylus-loader/index.js!./style.styl", function() {
+			var newContent = require("!!../node_modules/.css-loader@0.28.1@css-loader/index.js??ref--1-1!../node_modules/.postcss-loader@2.0.5@postcss-loader/lib/index.js??ref--1-2!../node_modules/.stylus-loader@3.0.1@stylus-loader/index.js!./style.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 /* 5 */
@@ -547,18 +569,25 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_styl__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_styl__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_addons_css_transition_group__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_addons_css_transition_group__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_addons_css_transition_group___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_addons_css_transition_group__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animate_css__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animate_css__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animate_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__animate_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_cssCombine__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -574,28 +603,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-function b(s, string) {
-    return s[string];
-}
+var css = new __WEBPACK_IMPORTED_MODULE_4__util_cssCombine__["a" /* default */]({ style: __WEBPACK_IMPORTED_MODULE_1__style_styl___default.a });
 
 var Loading = function (_React$Component) {
     _inherits(Loading, _React$Component);
 
-    function Loading() {
+    function Loading(props) {
         _classCallCheck(this, Loading);
 
-        return _possibleConstructorReturn(this, (Loading.__proto__ || Object.getPrototypeOf(Loading)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Loading.__proto__ || Object.getPrototypeOf(Loading)).call(this, props));
     }
 
     _createClass(Loading, [{
         key: 'render',
         value: function render() {
             var p = this.props;
-            var rootClass = b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading') + ' ' + (p.fullWindow ? b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading-fullWindow') : '') + ' ' + (p.opacity ? b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading-opacity') : '');
+            var rootClass = css.combine('boxLoading', p.fullWindow && '-fullWindow', p.opacity && '-opacity');
             var dotStyle = {
                 width: p.dotSize + 'px',
                 height: p.dotSize + 'px',
-                backgroundColor: p.backgroundColor
+                backgroundColor: p.dotColor
             };
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_2_react_addons_css_transition_group___default.a,
@@ -611,14 +638,14 @@ var Loading = function (_React$Component) {
                         style: _extends({}, p.style, { backgroundColor: p.backgroundColor }) },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading-contain') },
+                        { className: __WEBPACK_IMPORTED_MODULE_1__style_styl___default.a['boxLoading-contain'] },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading-content') },
+                            { className: __WEBPACK_IMPORTED_MODULE_1__style_styl___default.a['boxLoading-content'] },
                             [0, 1, 2].map(function (v, i) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', {
                                     key: i,
-                                    className: '' + b(__WEBPACK_IMPORTED_MODULE_1__style_styl___default.a, 'boxLoading-dot-' + i),
+                                    className: __WEBPACK_IMPORTED_MODULE_1__style_styl___default.a['boxLoading-dot-' + i],
                                     style: dotStyle
                                 });
                             })
@@ -655,7 +682,7 @@ Loading.propTypes = {
 /* harmony default export */ __webpack_exports__["default"] = (Loading);
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -669,7 +696,7 @@ exports.push([module.i, ".loading-enter {\r\n    opacity: 0.01;\r\n}\r\n\r\n.loa
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -692,7 +719,7 @@ exports.locals = {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 

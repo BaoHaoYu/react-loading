@@ -2,19 +2,21 @@ import React from 'react';
 import s from './style.styl';
 import ReactCSS from 'react-addons-css-transition-group'
 import './animate.css'
-
-function b(s, string) {
-    return s[string]
-}
+import CssCombine from '../util/cssCombine'
+var css = new CssCombine({style:s});
 
 class Loading extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         var p = this.props;
-        var rootClass = `${ b(s, 'boxLoading') } ${ p.fullWindow ? b(s, 'boxLoading-fullWindow') : '' } ${ p.opacity ? b(s, 'boxLoading-opacity') : '' }`;
+        var rootClass = css.combine('boxLoading', p.fullWindow && '-fullWindow', p.opacity && '-opacity');
         var dotStyle = {
             width: `${p.dotSize}px`,
             height: `${p.dotSize}px`,
-            backgroundColor: p.backgroundColor
+            backgroundColor: p.dotColor
         };
         return (
           <ReactCSS
@@ -26,15 +28,15 @@ class Loading extends React.Component {
                   ref={ 'main' }
                   className={ rootClass }
                   style={ {...p.style, backgroundColor: p.backgroundColor} }>
-                    <div className={ b(s, 'boxLoading-contain') }>
-                        <div className={b(s, 'boxLoading-content')}>
-                            {[0, 1, 2].map((v, i) =>
+                    <div className={ s['boxLoading-contain'] }>
+                        <div className={ s['boxLoading-content'] }>
+                            { [0, 1, 2].map((v, i) =>
                               <span
                                 key={ i }
-                                className={`${b(s, `boxLoading-dot-${i}`)}`}
+                                className={ s[`boxLoading-dot-${i}`] }
                                 style={ dotStyle }
                               />
-                            )}
+                            ) }
                         </div>
                     </div>
                 </div>

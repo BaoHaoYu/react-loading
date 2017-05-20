@@ -1,4 +1,5 @@
-import Main from 'react-loading'
+import React from 'react'
+import Main from './react-loading'
 
 class Loading extends Main {}
 

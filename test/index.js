@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import BhyLoading from '../dist/index'
+import BhyLoading from '../src/index'
 import {fromJS} from 'immutable'
 import {from} from 'immutable/contrib/cursor'
 import './index.styl'
